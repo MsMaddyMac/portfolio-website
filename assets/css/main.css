@@ -2016,6 +2016,16 @@ input, select, textarea {
 		position: relative;
 	}
 
+	.fab {
+		text-decoration: none;
+		border-bottom: none;
+		position: relative;
+	}
+
+		.fab > .label {
+			display: none;
+		}
+
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
@@ -3894,7 +3904,7 @@ input, select, textarea {
 			font-size: 1.25em;
 		}
 
-			#footer .icons a {
+			#footer .icons  a {
 				color: rgba(255, 255, 255, 0.5);
 			}
 
