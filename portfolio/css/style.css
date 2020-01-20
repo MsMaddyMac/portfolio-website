@@ -22,6 +22,8 @@
   --clr-dark: #303030;
   /* accent color */
   --clr-accent: #663399;
+  /* contrast color */
+  --clr-contrast: #16e0bd;
 
   /* font-size */
   --fs-h1: 3rem;
@@ -64,6 +66,31 @@ img {
 }
 
 strong { font-weight: var(--fw-bold) }
+
+:focus {
+  outline: 3px solid var(--clr-contrast);
+  outline-offset: 3px;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: .5em 2.5em;
+  background: var(--clr-contrast);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
 
 /* Typography */
 
@@ -145,5 +172,52 @@ nav { display: none; }
     position: relative;
     left: -1.5em;
     width: calc(100% + 1.5em); /* lines up block with text above because we are using relative opposed to absolute. */
+  }
+}
+
+/* My Services Section */
+
+.my-skills {
+  background-color: var(--clr-dark);
+  background-image: url(../img/services-bg.jpg);
+  background-size: cover;
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section__title--skills {
+  color: var(--clr-contrast);
+  position: relative;
+}
+
+.section__title--skills::after {
+  content: '';
+  display: block;
+  width: 2em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.5;
+}
+
+.skills {
+  margin-bottom: 4em;
+}
+
+.skill {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .skills {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skill + .skill {
+    margin-left: 2em;
   }
 }
